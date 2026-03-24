@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #e8e8e8;
+  font-family: "Poppins", sans-serif;
+}
+
+.share-btn-wrapper {
+  position: relative;
+  padding: 3px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #93a1f8, #0f1f8b);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  outline: none;
+}
+
+.share-btn-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px -8px rgba(77, 62, 226, 0.5);
+}
+
+.share-btn-wrapper:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 8px 16px -4px rgba(77, 62, 226, 0.4);
+}
+
+.share-inner {
+  position: relative;
+  width: 240px;
+  height: 60px;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hover-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 28px);
+  height: 100%;
+  background: linear-gradient(90deg, #4d3ee2, #2c1fab);
+  border-radius: 999px;
+  transform: translateX(105%);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.share-btn-wrapper:hover .hover-panel {
+  transform: translateX(0);
+}
+
+.share-text {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #3528b9;
+  z-index: 2;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.share-btn-wrapper:hover .share-text {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+
+.social-icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 28px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 3;
+  transform: translateX(40px);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.share-btn-wrapper:hover .social-icons {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0.05s;
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.social-icons svg:hover {
+  transform: scale(1.2) translateY(-2px);
+  opacity: 0.9;
+}
